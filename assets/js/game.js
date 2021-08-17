@@ -61,6 +61,14 @@ if (promptFight === "fight" || promptFight === "FIGHT") {
 
   // check player's health
   if (playerHealth <= 0) {
+    for(var i = 0; i < enemyNames.length; i++){
+  if (playerHealth > 0) {
+    window.alert("welcome to robot gladiators! round " + (i + 1 ));
+  }
+  var pickedEnemyName = enemyNames[i];
+  enemyHealth = 50;
+  fight(pickedEnemyName);
+}
     window.alert(playerName + " has died!");
   } else {
     window.alert(playerName + " still has " + playerHealth + " health left.");
@@ -107,12 +115,21 @@ if (promptFight === "fight" || promptFight === "FIGHT") {
 
 
 
+
 for(var i = 0; i < enemyNames.length; i++){
-  var pickedEnemyName = enemyNames[i];
+  if (playerHealth > 0) {
+    window.alert("welcome to robot gladiators! round " + (i + 1 ));
+    var pickedEnemyName = enemyNames[i];
   enemyHealth = 50;
   fight(pickedEnemyName);
-}
+  }
 
+  else {
+    window.alert("you have lost your robot in battle! game over");
+    break;
+  }
+  
+}
 
 //fight();
 
